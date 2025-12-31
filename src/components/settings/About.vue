@@ -2,15 +2,13 @@
     <div class="d-flex justify-content-center align-items-center">
         <div class="logo d-flex flex-column justify-content-center align-items-center">
             <object class="my-4" width="200" height="200" data="/icon.svg" />
-            <div class="fs-4 fw-bold">Uptime Kuma</div>
+            <div class="fs-4 fw-bold">BlackHawk Uptime Monitor</div>
             <div>{{ $t("Version") }}: {{ $root.info.version }}</div>
             <div class="frontend-version">{{ $t("Frontend Version") }}: {{ $root.frontendVersion }}</div>
 
             <div v-if="!$root.isFrontendBackendVersionMatched" class="alert alert-warning mt-4" role="alert">
                 ⚠️ {{ $t("Frontend Version do not match backend version!") }}
             </div>
-
-            <div class="my-3 update-link"><a href="https://github.com/louislam/uptime-kuma/releases" target="_blank" rel="noopener">{{ $t("Check Update On GitHub") }}</a></div>
 
             <div class="mt-1">
                 <div class="form-check">
@@ -20,9 +18,6 @@
                 <div class="form-check">
                     <label><input v-model="settings.checkBeta" type="checkbox" :disabled="!settings.checkUpdate" @change="saveSettings()" /> {{ $t("Also check beta release") }}</label>
                 </div>
-            </div>
-            <div class="mt-5">
-                <p>{{ $t("Font Twemoji by Twitter licensed under") }} <a href="https://creativecommons.org/licenses/by/4.0/">CC-BY 4.0</a></p>
             </div>
         </div>
     </div>

@@ -8,7 +8,7 @@ exports.latestVersion = null;
 
 // How much time in ms to wait between update checks
 const UPDATE_CHECKER_INTERVAL_MS = 1000 * 60 * 60 * 48;
-const UPDATE_CHECKER_LATEST_VERSION_URL = "https://uptime.kuma.pet/version";
+const UPDATE_CHECKER_LATEST_VERSION_URL = "";
 
 let interval;
 
@@ -17,6 +17,9 @@ exports.startInterval = () => {
         if (await setting("checkUpdate") === false) {
             return;
         }
+
+        // Update checking disabled in BlackHawk Uptime Monitor
+        return;
 
         log.debug("update-checker", "Retrieving latest versions");
 
